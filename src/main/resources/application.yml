@@ -1,0 +1,23 @@
+# application.yml
+spring:
+  cloud:
+    gcp:
+      credentials:
+        location: classpath:pros-exchange-rate-0be86127e257.json
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  endpoint:
+    health:
+      show-details: always

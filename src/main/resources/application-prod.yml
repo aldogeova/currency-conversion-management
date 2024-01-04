@@ -1,0 +1,36 @@
+# application-dev.yml
+server:
+  port: 9090
+debug: true
+
+
+spring:
+  data:
+    mongodb:
+      host: host.docker.internal
+      port: 27017
+      database: pros
+      username: anavarrete
+      password: Navarretea11221
+      authentication-database: admin
+
+#Logs
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.pros.exchangeratesyncservice: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.data.mongodb.core.convert: DEBUG
+    org.springframework.data.mongodb.core.mapping: DEBUG
+    org.springframework.data.mongodb.core.query: TRACE
+
+
+#External integration
+fixer:
+  api:
+    url: http://data.fixer.io/api
+    access-key: xxxxxxxxxxxxx
+  minutes-sync: 15
+
+
